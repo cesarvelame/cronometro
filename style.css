@@ -15,5 +15,28 @@ body  {
 #contador {
     color:red;
     font-size:80vh;
+    font-weight: bold;
+}
+
+input {
+	font-family: Arial, Verdana, sans-serif;
+}
+
+.scoreButtons {
+    height: 20%;
+}
+
+.scoreButton {
+    min-height: 50%;
+    width: 15%;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    margin: 1em;
+}
+
+.scoreButton:hover {
+    border: 1px solid yellow;
 }
 
