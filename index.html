@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Contador 24 Segundos</title>
+  <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<script>
+    
+    var CCOUNT = 24;
+    
+    var t, count;
+    
+    function cddisplay() {
+        // displays time in span
+        document.getElementById('timespan').innerHTML = count;
+    };
+    
+    function countdown() {
+        // starts countdown
+        cddisplay();
+        if (count == 0) {
+            // time is up
+        } else {
+            count--;
+            t = setTimeout("countdown()", 1000);
+        }
+    };
+    
+    function cdpause() {
+        // pauses countdown
+        clearTimeout(t);
+    };
+    
+    function cdreset() {
+        // resets countdown
+        cdpause();
+        count = CCOUNT;
+        cddisplay();
+    };
+    
+</script>
+
+<body onload="cdreset()">
+<div id="contador">
+<span id="timespan"></span>
+</div>
+<div id="controles">
+<input type="button" value="Iniciar" onclick="countdown()">
+<input type="button" value="Parar" onclick="cdpause()">
+<input type="button" value="Reiniciar" onclick="cdreset()">
+</div>
+</body>
+</html>

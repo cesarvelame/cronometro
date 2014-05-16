@@ -1,0 +1,20 @@
+* { margin: 0; padding: 0; }
+
+/* *** General Styles *** */
+html {
+    height: 100%;
+}
+
+body  {
+    background-color: #000;
+    text-align: center;
+    height: 100%;
+    font-size:100%;
+    font-family:Arial, Verdana, sans-serif;
+}
+
+#contador {
+    color:red;
+    font-size:80vh;
+}
+
