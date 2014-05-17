@@ -42,6 +42,14 @@
     
 </script>
 
+<script language="javascript">
+function playIt()
+{
+   document.getElementById("forEmbed").innerHTML="<embed src='buzina.wav' autostart=true loop=false volume=100 hidden=true>";
+   return true;
+}
+</script>
+
 <body onload="cdreset()">
 <div id="contador">
 <span id="timespan"></span>
@@ -50,6 +58,9 @@
 <input type="button" value="Iniciar" onclick="countdown()" accesskey="i" class="scoreButton">
 <input type="button" value="Parar" onclick="cdpause()" accesskey="p" class="scoreButton">
 <input type="button" value="Reiniciar" onclick="cdreset()" accesskey="r" class="scoreButton">
+<button type="button" onclick="playIt()" class="scoreButton">Buzina</button>
+<div id="forEmbed">
+</div>
 </div>
 </body>
 </html>
