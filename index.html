@@ -50,15 +50,49 @@ function playIt()
 }
 </script>
 
+<script type='text/javascript'>
+	document.onkeydown = function(e){
+	var keychar;
+
+	// Internet Explorer
+	try {
+	keychar = String.fromCharCode(event.keyCode);
+	e = event;
+	}
+
+	// Firefox, Opera, Chrome, etc...
+	catch(err) {
+	keychar = String.fromCharCode(e.keyCode);
+	}
+
+	if (e.ctrlKey && keychar == 'R') {
+		cdreset()
+	return false;
+}
+	if (e.ctrlKey && keychar == 'I') {
+		countdown()
+	return false;
+}
+	if (e.ctrlKey && keychar == 'P') {
+		cdpause()
+	return false;
+}
+	if (e.ctrlKey && keychar == 'B') {
+		playIt()
+	return false;
+}
+}
+</script>
+
 <body onload="cdreset()">
 <div id="contador">
 <span id="timespan"></span>
 </div>
 <div id="controles">
-<input type="button" value="Iniciar" onclick="countdown()" accesskey="i" class="scoreButton">
-<input type="button" value="Parar" onclick="cdpause()" accesskey="p" class="scoreButton">
-<input type="button" value="Reiniciar" onclick="cdreset()" accesskey="r" class="scoreButton">
-<button type="button" onclick="playIt()" class="scoreButton">Buzina</button>
+<input type="button" value="Iniciar (CTRL+I)" onclick="countdown()" class="scoreButton">
+<input type="button" value="Parar (CTRL+P)" onclick="cdpause()" class="scoreButton">
+<input type="button" value="Reiniciar (CTRL+R)" onclick="cdreset()" class="scoreButton">
+<button type="button" onclick="playIt()" class="scoreButton">Buzina (CTRL+B)</button>
 <div id="forEmbed">
 </div>
 </div>
